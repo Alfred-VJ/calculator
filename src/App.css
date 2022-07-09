@@ -1,0 +1,49 @@
+.App{
+  text-align: center;
+  margin-top: 50px;
+  display: grid;
+  place-content: center;
+  border: 3px solid rgb(21, 21, 21);
+  width: 320px;
+  height: 400px;
+  border-radius: 10px;
+  background-color:rgb(3, 1, 13);
+}
+
+.pantalla{
+  border: 1px solid rgb(140, 140, 140);
+  background-color:rgb(176, 175, 175) ;
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.pantalla p{
+  text-align: end;
+  color: aliceblue;
+  margin-right: 10px;
+  margin-top: auto;
+  font-size: 30px;
+}
+.contBotones{
+  margin-top: 10px;
+}
+.botones button {
+  width: 60px;
+  height: 55px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 25px;
+}
+
+button:hover{
+ cursor: pointer;
+ width: 55px;
+ height: 45px;
+ margin: 7.5px;
+ background-color:rgb(147, 146, 139);
+ font-size: 20px;
+}
+h1{
+  color: white;
+}
