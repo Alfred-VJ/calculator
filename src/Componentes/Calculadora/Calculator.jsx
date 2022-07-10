@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import Boton from '../Botones/Boton';
+import Boton from '../Botones/Boton'
 
 const Calculator = () => {
     const [delet] = useState("«")
