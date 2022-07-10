@@ -6,11 +6,12 @@ import Boton from './Botones/Boton';
 
 
 function App() {
+  const [delet] = useState("«")
   const [igual] = useState("=")
   const [suma] = useState("+")
   const [resta] = useState("-")
   const [multiplicar] = useState("x")
-  const [dividir] = useState("/")
+  const [dividir] = useState("÷")
   const [porcentaje] = useState("%")
   const [punto] = useState(".")
   const [cero,] = useState("0")
@@ -31,7 +32,10 @@ function App() {
 
 
   const p = (n) => {
-    if (n === "C" || n === "CC") setResultado("0")
+    if (n === "C" || n === "CC") {
+      setResultado("0")
+      setNumero(0)
+    }
     else if (n === "+") {
       setNumero(Number(resultado));
       setResultado("0")
@@ -47,7 +51,7 @@ function App() {
       setResultado("0")
       setTipoOperacion(n)
     }
-    else if (n === "/") {
+    else if (n === "÷") {
       setNumero(Number(resultado));
       setResultado("0")
       setTipoOperacion(n)
@@ -56,6 +60,10 @@ function App() {
       setNumero(Number(resultado));
       setResultado("0")
       setTipoOperacion(n)
+    }
+    else if (n === "«") {
+      let res = resultado.slice(0, -1);
+      setResultado(res);
     }
     else if (n === "=") {
       if (numero && tipoOperacion !== "") {
@@ -68,7 +76,7 @@ function App() {
             let rest = numero - Number(resultado);
             setResultado(String(rest));
             break;
-          case "/":
+          case "÷":
             let divi = numero / Number(resultado);
             setResultado(String(divi));
             break;
@@ -103,30 +111,31 @@ function App() {
               <Boton click={p} value={C} />
               <Boton click={p} value={CC} />
               <Boton click={p} value={porcentaje} />
-              <Boton click={p} value={dividir} />
+              <Boton click={p} value={delet} />
             </div>
             <div className='botones'>
               <Boton click={p} value={siete} />
               <Boton click={p} value={ocho} />
               <Boton click={p} value={nueve} />
-              <Boton click={p} value={multiplicar} />
+              <Boton click={p} value={dividir} />
             </div>
             <div className='botones'>
               <Boton click={p} value={cuatro} />
               <Boton click={p} value={cinco} />
               <Boton click={p} value={seis} />
-              <Boton click={p} value={resta} />
+              <Boton click={p} value={multiplicar} />
             </div>
             <div className='botones'>
               <Boton click={p} value={uno} />
               <Boton click={p} value={dos} />
               <Boton click={p} value={tres} />
-              <Boton click={p} value={suma} />
+              <Boton click={p} value={resta} />
             </div>
             <div className='botones'>
               <Boton click={p} value={cero} />
               <Boton click={p} value={punto} />
               <Boton click={p} value={igual} />
+              <Boton click={p} value={suma} />
             </div>
           </div>
         </div>
